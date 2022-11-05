@@ -1,7 +1,12 @@
+import java.util.Arrays;
+
 public class mergeSorting {
     
     public static void main(String[] args) {
     
+    int[]  m = {1,55,-20,30};
+    mergeSort (m, 0, m.length);
+        System.out.println (Arrays.toString (m));
     }
     
     public static void mergeSort(int[] input, int start, int end){
