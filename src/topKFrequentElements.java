@@ -56,9 +56,7 @@ public class topKFrequentElements {
 
                     pq.remove();
                     pq.offer(key);
-                }
-
-            }
+                }}
             else{
                 pq.offer(key);
             }
