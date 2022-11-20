@@ -61,32 +61,21 @@ public class EmployeeLinkedList {
     }
     
     public EmployeeNode removeFromEnd(){
-        
         if(isEmpty ()){
-            
             return null;
         }
-        
         EmployeeNode removeNode =tail;
-        
-        if(tail.getNext () == null){
-            
+        if(tail.getPrevious () == null){
             head = null;
         }
         else {
-            
             tail.getPrevious ().setNext (null);
         }
         tail = tail.getPrevious ();
         size--;
         removeNode.setPrevious (null);
         return removeNode;
-        
-        
-    
-    
-    
-    }
+            }
     
     public int getSize() {
         return size;
