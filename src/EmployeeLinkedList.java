@@ -60,22 +60,56 @@ public class EmployeeLinkedList {
         return  removedNode;
     }
     
-    public EmployeeNode removeFromEnd(){
-        if(isEmpty ()){
+    public EmployeeNode removeFromEnd() {
+        if (isEmpty ()) {
             return null;
         }
-        EmployeeNode removeNode =tail;
-        if(tail.getPrevious () == null){
+        EmployeeNode removeNode = tail;
+        if (tail.getPrevious () == null) {
             head = null;
-        }
-        else {
+        } else {
             tail.getPrevious ().setNext (null);
         }
         tail = tail.getPrevious ();
         size--;
         removeNode.setPrevious (null);
         return removeNode;
-            }
+    }
+    
+    public boolean addBefore(Employee newEmployee, Employee existingEmployee){
+    
+     if(head == null){
+         return false;
+     }
+     
+     EmployeeNode current = head;
+     
+     while(current !=null && !current.getEmployee ().equals (existingEmployee)){
+         
+         
+         current = current.getNext ();
+     }
+     
+     if(current == null){
+         
+         return false;
+     }
+     EmployeeNode newNode = new EmployeeNode (newEmployee);
+     newNode.setPrevious (current.getPrevious ());
+     newNode.setNext (current);
+     current.setPrevious (newNode);
+     
+     if(head == current){
+         head = newNode;
+     }
+     else{
+          newNode.getPrevious ().setNext (newNode);
+     }
+     size++;
+     return true;
+    }
+    
+    
     
     public int getSize() {
         return size;
