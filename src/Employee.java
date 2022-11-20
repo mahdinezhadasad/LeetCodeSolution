@@ -12,19 +12,6 @@ public class Employee {
         this.id = id;
     }
     
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass () != o.getClass ()) return false;
-        Employee employee = (Employee) o;
-        return id == employee.id && firstName.equals (employee.firstName) && lastName.equals (employee.lastName);
-    }
-    
-    @Override
-    public int hashCode() {
-        return Objects.hash (firstName, lastName, id);
-    }
-    
     public String getFirstName() {
         return firstName;
     }
@@ -47,6 +34,26 @@ public class Employee {
     
     public void setId(int id) {
         this.id = id;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        
+        Employee employee = (Employee) o;
+        
+        if (id != employee.id) return false;
+        if (!firstName.equals(employee.firstName)) return false;
+        return lastName.equals(employee.lastName);
+    }
+    
+    @Override
+    public int hashCode() {
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + id;
+        return result;
     }
     
     @Override
