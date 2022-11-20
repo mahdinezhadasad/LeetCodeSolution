@@ -6,6 +6,8 @@ public class EmployeeNode {
     
     private EmployeeNode previous;
     
+    private Integer value;
+    
     public EmployeeNode getPrevious() {
         return previous;
     }
@@ -15,7 +17,7 @@ public class EmployeeNode {
     }
     
     public EmployeeNode(Employee employee) {
-        this.employee =employee;
+        this.employee = employee;
     }
     
     public Employee getEmployee() {
@@ -34,8 +36,16 @@ public class EmployeeNode {
         this.next = next;
     }
     
-    public String toString(){
+    public String toString() {
     
-         return employee.toString ();
+        return employee.toString ();
+    }
+    
+    public Integer getValue() {
+        return value;
+    }
+    
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }
