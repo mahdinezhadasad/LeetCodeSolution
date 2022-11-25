@@ -9,16 +9,30 @@ public class LinkedStackedMain {
             Employee mikeWilson = new Employee ("Mike", "Wilson", 3245);
             Employee billEnd = new Employee ("bill","End",123);
         
-            LinkedStack  stacked = new LinkedStack ();
+//            LinkedStack  stacked = new LinkedStack ();
+//
+//            stacked.push (janeJones);
+//            stacked.push(johnDoe);
+//            stacked.push (marySmith);
+//            stacked.push(mikeWilson);
+//            stacked.push (billEnd);
+//
+//            System.out.println (stacked.peek ());
         
-            stacked.push (janeJones);
-            stacked.push(johnDoe);
-            stacked.push (marySmith);
-            stacked.push(mikeWilson);
-            stacked.push (billEnd);
-        
-            System.out.println (stacked.peek ());
-        
+            
+            ArrayQueue queue = new ArrayQueue (10);
+            queue.add (janeJones);
+            queue.add (johnDoe);
+            queue.add (marySmith);
+            queue.add (mikeWilson);
+            queue.add (billEnd);
+            
+            queue.printQueue ();
+            
+            queue.remove ();
+            System.out.println ("----------------------------");
+            queue.printQueue ();
+            
         }
     
 }
