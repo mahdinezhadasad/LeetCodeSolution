@@ -24,13 +24,11 @@ public class JdkQueue {
                 stack.push (c);
             }
         }
-        while(!stack.isEmpty ()){
-            if(!stack.pop ().equals (queue.removeFirst ())){
-                
+        while (!stack.isEmpty ()) {
+            if (!stack.pop ().equals (queue.removeFirst ())) {
                 return false;
             }
         }
-        
         return true;
     }
 }
