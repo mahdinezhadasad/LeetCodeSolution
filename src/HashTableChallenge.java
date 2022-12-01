@@ -30,7 +30,7 @@ public class HashTableChallenge {
         while(iterator.hasNext ()){
             
             Employee employee = iterator.next ();
-            if(employeeTable.containsKey (employee.getId ())){
+            if(employeeTable.containsKey(employee.getId ())){
                 
                 remove.add (employee);
             }
@@ -50,8 +50,8 @@ public class HashTableChallenge {
         }
     
         System.out.println ("----------------------------------------");
-        
         employees.forEach (System.out::println);
+        
     
     }
     
