@@ -61,21 +61,24 @@ public class Heap {
             int rightChild = getChild (index, false);
             
             if (leftChild <= lastHeapIndex) {
+                if (leftChild > lastHeapIndex) {
+                    childToSwap = leftChild;
+                } else {
+                    childToSwap = (heap[leftChild] > heap[rightChild] ? leftChild : rightChild);
+                }
                 
-                childToSwap = leftChild;
-            } else {
-                childToSwap = (heap[leftChild] > heap[rightChild] ? leftChild : rightChild);
+                if (heap[index] < heap[childToSwap]) {
+                    
+                    int tmp = heap[index];
+                    heap[index] = heap[childToSwap];
+                    heap[childToSwap] = tmp;
+                } else {
+                    break;
+                }
+                index = childToSwap;
             }
-            if (heap[index] < heap[childToSwap]) {
-                
-                int tmp = heap[index];
-                heap[index] = heap[childToSwap];
-                heap[childToSwap] = tmp;
-            } else {
-                break;
-            }
-            index = childToSwap;
         }
+        
     }
     
     public void printHeap() {
