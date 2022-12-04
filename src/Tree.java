@@ -58,8 +58,6 @@ public class Tree {
             return root.max ();
         }
     }
-    
-    
     public int min() {
         if (root == null) {
             return Integer.MIN_VALUE;
@@ -67,8 +65,6 @@ public class Tree {
             return root.min ();
         }
     }
-    
-    
     public TreeNode get(int value) {
         if (root != null) {
             
@@ -78,12 +74,18 @@ public class Tree {
         
     }
     
-    
     public void traversInOrder() {
         
         if (root != null) {
             
             root.traverseInOrder ();
+        }
+    }
+    public void traversPreOrder() {
+        
+        if (root != null) {
+            
+            root.traversePreOrder ();
         }
     }
     

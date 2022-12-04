@@ -48,6 +48,17 @@ public class TreeNode {
         
     }
     
+    public void traversePreOrder() {
+        
+        System.out.print ("Data = " + data + ", ");
+        if (leftChild != null) {
+            leftChild.traverseInOrder ();
+        }
+        if (rightChild != null) {
+            rightChild.traverseInOrder ();
+        }
+    }
+    
     public TreeNode get(int value) {
         if (value == data) {
             
