@@ -61,7 +61,7 @@ public class Heap {
             int rightChild = getChild (index, false);
             
             if (leftChild <= lastHeapIndex) {
-                if (leftChild > lastHeapIndex) {
+                if (rightChild > lastHeapIndex) {
                     childToSwap = leftChild;
                 } else {
                     childToSwap = (heap[leftChild] > heap[rightChild] ? leftChild : rightChild);
@@ -78,6 +78,16 @@ public class Heap {
                 index = childToSwap;
             }
         }
+        
+    }
+    
+    public int peek() {
+        if (isEmpty ()) {
+            
+            throw new IndexOutOfBoundsException (" Heap is empty ");
+        }
+        
+        return heap[0];
         
     }
     
